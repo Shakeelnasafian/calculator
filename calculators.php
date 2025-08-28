@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Calculators
+Plugin Name: Health-Calculators
 Description: Create calculators and use shortcodes to display them on the frontend. Built with Alpine.js and Bootstrap.
 Version: 1.0
 Author: Shakeel Ahmad
