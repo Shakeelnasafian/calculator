@@ -21,10 +21,37 @@ add_shortcode('calculator', function($atts) {
         'type' => 'bmi',
     ], $atts);
     ob_start();
-    if ($atts['type'] === 'bmi') {
-        include __DIR__ . '/templates/bmi-calculator.php';
+    switch ($atts['type']) {
+        case 'bmi':
+            include __DIR__ . '/templates/bmi-calculator.php';
+            break;
+        case 'ideal-weight':
+            include __DIR__ . '/templates/ideal-weight-calculator.php';
+            break;
+        case 'pace':
+            include __DIR__ . '/templates/pace-calculator.php';
+            break;
+        case 'army-body-fat':
+            include __DIR__ . '/templates/army-body-fat-calculator.php';
+            break;
+        case 'lean-body-mass':
+            include __DIR__ . '/templates/lean-body-mass-calculator.php';
+            break;
+        case 'healthy-weight':
+            include __DIR__ . '/templates/healthy-weight-calculator.php';
+            break;
+        case 'calories-burned':
+            include __DIR__ . '/templates/calories-burned-calculator.php';
+            break;
+        case 'one-rep-max':
+            include __DIR__ . '/templates/one-rep-max-calculator.php';
+            break;
+        case 'target-heart-rate':
+            include __DIR__ . '/templates/target-heart-rate-calculator.php';
+            break;
+        default:
+            echo '<div class="alert alert-warning">Unknown calculator type.</div>';
     }
-    // Add more calculators here
     return ob_get_clean();
 });
 
